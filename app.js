@@ -129,7 +129,7 @@ let controlsVisible =
 let fontSize =
   Number(
     localStorage.getItem(
-      "fontSize-beta"
+      "fontSize-mat2"
     )
   ) || 100;
 
@@ -149,10 +149,10 @@ if (versionEl)
     "v" + APP_VERSION;
 
 const READER_DATA_KEY =
-  "epub-beta-reader-data";
+  "ges-mat2-reader-data";
 
 const BOOKMARKS_KEY =
-  "epub-beta-bookmarks";
+  "ges-mat2-bookmarks";
 
 
 /* =========================
@@ -662,10 +662,6 @@ function buildTOC(
 }
 
 
-/* =================
-   START READER
-================= */
-
 /* =========================
    SLIDE PAGE ANIMATION
 ========================= */
@@ -722,6 +718,11 @@ function slidePage(direction, action) {
   }, 220);
 
 }
+
+
+/* =================
+   START READER
+================= */
 
 function pageNext() {
   if (!rendition || _sliding) return;
@@ -1702,7 +1703,7 @@ bottomDecreaseFont.addEventListener(
     );
 
     localStorage.setItem(
-      "fontSize-beta",
+      "fontSize-mat2",
       fontSize
     );
 
@@ -1720,7 +1721,7 @@ bottomIncreaseFont.addEventListener(
     );
 
     localStorage.setItem(
-      "fontSize-beta",
+      "fontSize-mat2",
       fontSize
     );
 
@@ -1794,7 +1795,7 @@ if (
         await navigator
           .serviceWorker
           .register(
-            "./sw-beta.js"
+            "./sw-mat2.js"
           );
 
       }
@@ -1913,7 +1914,6 @@ document.addEventListener("touchend", e => {
 }, { passive: true, capture: true });
 
 loadBook();
-
 
 
 /* =========================
@@ -2069,9 +2069,9 @@ loadBook();
       document.createElement("div");
     banner.id = "installBanner";
     banner.innerHTML = `
-      <img src="icon-beta-192.png" alt="icon" />
+      <img src="icon-mat2-192.png" alt="icon" />
       <div class="ib-text">
-        <div class="ib-title">GES Pasco</div>
+        <div class="ib-title">GES Model Aptitude Test 2</div>
         <div class="ib-sub">Add to Home Screen for offline reading</div>
       </div>
       <div class="ib-actions">
@@ -2135,7 +2135,7 @@ loadBook();
       banner.id = "iosBanner";
       banner.innerHTML = `
         <div class="ios-title">
-          📖 Install GES Pasco
+          📖 GES Model Aptitude Test 2
         </div>
         <div class="ios-steps">
           Tap <strong>Share</strong> (□↑) at the bottom of Safari<br>
